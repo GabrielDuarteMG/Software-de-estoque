@@ -20,16 +20,14 @@
 #include <string.h>
 #include <stdbool.h>
 #define QuantMax 200
-
 int produtosCadastrados = 0;
-
 int produtosEstoque[QuantMax];
 int produtosCaixa[QuantMax];
 int ContCaixa = 0;
 void MenuDeEstoque();
 void MenuDeCaixa();
 void Quitar(int x);
-void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");}
+void Limpar(){printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");printf("\e[1;1H\e[2J");}
 bool VerificarProduto(int val, int *arr, int Tamanho){
     int i;
     for (i=0; i < Tamanho; i++) {
@@ -41,7 +39,7 @@ bool VerificarProduto(int val, int *arr, int Tamanho){
 float Dinheiro = 22200.20;
 struct produto{
         char nome [50];
-        char descricao [100];
+        char descricao [144];
         int quantidade;
         float pcompra;
         float pvenda;
@@ -51,14 +49,15 @@ struct produto Estoque[QuantMax];
 struct produto EstoqueCaixa[QuantMax];
 void main ()
 {
+Limpar();
     int x;
     for(x = 0;x!=QuantMax;x++){
-    strcpy(Estoque[x].nome,"Null");
-    strcpy(Estoque[x].descricao,"Null");
-    Estoque[x].quantidade = 0;
-    Estoque[x].pcompra = 0;
-    Estoque[x].pvenda = 0;
-    Estoque[x].CodigoDeBarra = 0;
+        strcpy(Estoque[x].nome,"Null");
+        strcpy(Estoque[x].descricao,"Null");
+        Estoque[x].quantidade = 0;
+        Estoque[x].pcompra = 0;
+        Estoque[x].pvenda = 0;
+        Estoque[x].CodigoDeBarra = 0;
     }
     strcpy(Estoque[produtosCadastrados].nome,"Macarrao");
     strcpy(Estoque[produtosCadastrados].descricao,"Macarrao santa malha");
@@ -70,12 +69,12 @@ void main ()
     produtosCadastrados++;
 
     for(x = 0;x!=QuantMax;x++){
-    strcpy(EstoqueCaixa[x].nome,"Null");
-    strcpy(EstoqueCaixa[x].descricao,"Null");
-    EstoqueCaixa[x].quantidade = 0;
-    EstoqueCaixa[x].pcompra = 0;
-    EstoqueCaixa[x].pvenda = 0;
-    EstoqueCaixa[x].CodigoDeBarra = 0;
+        strcpy(EstoqueCaixa[x].nome,"Null");
+        strcpy(EstoqueCaixa[x].descricao,"Null");
+        EstoqueCaixa[x].quantidade = 0;
+        EstoqueCaixa[x].pcompra = 0;
+        EstoqueCaixa[x].pvenda = 0;
+        EstoqueCaixa[x].CodigoDeBarra = 0;
     }
     MenuDeEstoque();
 }
@@ -100,11 +99,12 @@ void Cadastrar(){
     Estoque[produtosCadastrados - 1].CodigoDeBarra = produtosCadastrados;
     produtosEstoque[produtosCadastrados -1] = produtosCadastrados;
     printf("\n\n\n%s cadastrado com sucesso!\n",NomeDoProd);
-      int y;
+    int y;
     printf("\nDeseja cadastrar outro produto? Se sim digite 1, se nao 0: ");
     scanf("%i",&y);
     if(y == 1){
-   Limpar(); Cadastrar();
+        Limpar();
+        Cadastrar();
     }
     else
     MenuDeEstoque();
@@ -143,7 +143,8 @@ void AlterarCount(){
         printf("\nDeseja alterar a quantidade de outro produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); AlterarCount();
+            Limpar();
+            AlterarCount();
         }
         else
             MenuDeEstoque();
@@ -155,7 +156,8 @@ void AlterarCount(){
         printf("\nDeseja alterar a quantidade de outro produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); AlterarCount();
+            Limpar();
+            AlterarCount();
         }
         else
             MenuDeEstoque();
@@ -179,7 +181,8 @@ void Buscarproduto(){
         printf("\nDeseja buscar outro produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); Buscarproduto();
+            Limpar();
+            Buscarproduto();
         }
         else
             MenuDeEstoque();
@@ -204,7 +207,8 @@ void BuscarprodutoCaixa(){
         printf("\nDeseja buscar outro produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); BuscarprodutoCaixa();
+            Limpar();
+            BuscarprodutoCaixa();
         }
         else
             MenuDeCaixa();
@@ -220,7 +224,8 @@ void Comprar(){
         printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); Comprar();
+            Limpar();
+            Comprar();
         }
         else
             MenuDeCaixa();
@@ -255,7 +260,8 @@ void Comprar(){
                     printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
                     scanf("%i",&y);
                     if(y == 1){
-                        Limpar(); Comprar();
+                        Limpar();
+                        Comprar();
                     }
                     else
                         MenuDeCaixa();
@@ -266,7 +272,8 @@ void Comprar(){
                     printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
                     scanf("%i",&y);
                     if(y == 1){
-                        Limpar(); Comprar();
+                        Limpar();
+                        Comprar();
                     }
                     else
                         MenuDeCaixa();
@@ -281,7 +288,8 @@ void Comprar(){
             printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
             scanf("%i",&y);
             if(y == 1){
-                Limpar(); Comprar();
+                Limpar();
+                Comprar();
             }
             else
                 MenuDeCaixa();
@@ -299,7 +307,8 @@ void Vender(){
         printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
         scanf("%i",&y);
         if(y == 1){
-            Limpar(); Vender();
+            Limpar();
+            Vender();
         }
         else
             MenuDeCaixa();
@@ -333,7 +342,8 @@ void Vender(){
                 printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
                 scanf("%i",&y);
                 if(y == 1){
-                    Limpar(); Vender();
+                    Limpar();
+                    Vender();
                 }
                 else
                     MenuDeCaixa();
@@ -347,7 +357,8 @@ void Vender(){
             printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
             scanf("%i",&y);
             if(y == 1){
-                Limpar(); Vender();
+                Limpar();
+                Vender();
             }
             else
                 MenuDeCaixa();
@@ -387,6 +398,7 @@ void MenuDeEstoque(){
         break;
     default:
         Quitar(1);
+        break;
     }
 }
 void MenuDeCaixa(){
@@ -402,15 +414,29 @@ void MenuDeCaixa(){
         scanf("%d",&opcao);
        switch(opcao){
         case  1:
-             Limpar();Vender() ;break;
+             Limpar();
+             Vender();
+             break;
         case 2:
-           Limpar(); Comprar(); break;
+
+            Limpar();
+            Comprar();
+            break;
         case  3:
-        Limpar();ListarCaixa();    break;
+            Limpar();
+            ListarCaixa();
+            break;
         case 4:
-       Limpar(); BuscarprodutoCaixa(); break;
-       case 5:  Limpar();MenuDeEstoque();break;
-        default:Quitar(2);
+            Limpar();
+            BuscarprodutoCaixa();
+            break;
+       case 5:
+            Limpar();
+            MenuDeEstoque();
+            break;
+        default:
+            Quitar(2);
+            break;
         }
 
 }
@@ -420,13 +446,12 @@ void Quitar(int x){
     printf("\nDeseja sair do programa? Se sim digite 1, se nao 0: ");
     scanf("%i",&y);
     if(y == 1){
-    return;
+        return;
     }
     else{
         if(x == 1)
-        MenuDeEstoque();
+            MenuDeEstoque();
         else
-        MenuDeCaixa();
-
+            MenuDeCaixa();
     }
 }
