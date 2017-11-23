@@ -1,20 +1,20 @@
 /*
-    Trabalho primeiro periodo ADS-UNIPAC Uberlandia
-    Professor:Diego Alves da Silva
-    Alunos: Daniel, Arthur, Gabriel, Igor, Marcos e Allysom
-    O trabalho consiste em implementar um software de estoque para uma empresa.
-    O software possui:
-        .Cadastro de Produto;
-        .Alterar quantidade de produtos;
-        .Listar produtos;
-        .Buscar um produto por código de barras;
-        .Os produtos possuem:
-            -Descrição;
-            -Código de barras;
-            -Quantidade disponível;
-            -Preço compra;
-            -Preço de venda;
-        .Controle de Caixa;
+        Trabalho primeiro periodo ADS-UNIPAC Uberlandia
+        Professor:Diego Alves da Silva
+        Alunos: Daniel, Arthur, Gabriel, Igor, Marcos e Allysom
+        O trabalho consiste em implementar um software de estoque para uma empresa.
+        O software possui:
+            .Cadastro de Produto;
+            .Alterar quantidade de produtos;
+            .Listar produtos;
+            .Buscar um produto por código de barras;
+            .Os produtos possuem:
+                -Descrição;
+                -Código de barras;
+                -Quantidade disponível;
+                -Preço compra;
+                -Preço de venda;
+            .Controle de Caixa;
 */
 #include <stdio.h>
 #include <string.h>
@@ -247,7 +247,7 @@ void Comprar(){
                     Estoque[cod - 1].quantidade = Estoque[cod - 1].quantidade - x;
                     strcpy(EstoqueCaixa[cod -1].nome,Estoque[cod -1].nome);
                     strcpy(EstoqueCaixa[cod -1].descricao, Estoque[cod -1].descricao);
-                    EstoqueCaixa[cod -1].quantidade = x;
+                    EstoqueCaixa[cod -1].quantidade = x + EstoqueCaixa[cod -1].quantidade;
                     EstoqueCaixa[cod - 1].pcompra =Estoque[cod - 1].pcompra;
                     EstoqueCaixa[cod - 1].pvenda = Estoque[cod - 1].pvenda;
                     EstoqueCaixa[cod - 1].CodigoDeBarra = Estoque[cod - 1].CodigoDeBarra;
