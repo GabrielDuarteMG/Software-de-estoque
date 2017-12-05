@@ -89,11 +89,11 @@ void Cadastrar() {
   printf("\nDigite sua descricao: ");
   scanf(" %[^\n]s", DescricaoDoProd);
   printf("\nDigite a quantidade: ");
-  scanf("%i", & Estoque[produtosCadastrados].quantidade);
+  scanf("%i", &Estoque[produtosCadastrados].quantidade);
   printf("\nDigite o preco de compra: ");
-  scanf("%f", & Estoque[produtosCadastrados].pcompra);
+  scanf("%f", &Estoque[produtosCadastrados].pcompra);
   printf("\nDigite o preco de venda: ");
-  scanf("%f", & Estoque[produtosCadastrados].pvenda);
+  scanf("%f", &Estoque[produtosCadastrados].pvenda);
   strcpy(Estoque[produtosCadastrados].nome, NomeDoProd);
   strcpy(Estoque[produtosCadastrados].descricao, DescricaoDoProd);
   produtosCadastrados++;
@@ -102,7 +102,7 @@ void Cadastrar() {
   printf("\n\n\n%s cadastrado com sucesso!\n", NomeDoProd);
   int y;
   printf("\nDeseja cadastrar outro produto? Se sim digite 1, se nao 0: ");
-  scanf("%i", & y);
+  scanf("%i", &y);
   if (y == 1) {
     Limpar();
     Cadastrar();
@@ -133,15 +133,15 @@ void AlterarCount() {
   int contAntiga;
   printf("           EDITAR QUANTIDADE DE UM PRODUTO");
   printf("\n\nDigite  o codigo do produto: ");
-  scanf("%i", & cod);
-  if (VerificarProduto(cod, produtosEstoque, QuantMax) && cod > 0) {
+  scanf("%i", &cod);
+  if (VerificarProduto(cod, produtosEstoque, QuantMax) &&cod > 0) {
     printf("\nDigite a quantidade nova de %s: ", Estoque[cod - 1].nome);
     contAntiga = Estoque[cod - 1].quantidade;
-    scanf("%i", & Estoque[cod - 1].quantidade);
+    scanf("%i", &Estoque[cod - 1].quantidade);
     printf("\nQuantidade de %s alterado com sucesso, de %i para %i\n\n", Estoque[cod - 1].nome, contAntiga, Estoque[cod - 1].quantidade);
     int y;
     printf("\nDeseja alterar a quantidade de outro produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       AlterarCount();
@@ -152,7 +152,7 @@ void AlterarCount() {
     printf("\n\nCodigo do Produto nao encontrado no estoque\n");
     int y;
     printf("\nDeseja alterar a quantidade de outro produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       AlterarCount();
@@ -163,8 +163,8 @@ void AlterarCount() {
 void Buscarproduto() {
   int x = 0;
   printf("\n\nDigite  o codigo do produto: ");
-  scanf("%i", & x);
-  if (VerificarProduto(x, produtosEstoque, QuantMax)&& x > 0) {
+  scanf("%i", &x);
+  if (VerificarProduto(x, produtosEstoque, QuantMax)&&x > 0) {
     x = x - 1;
     printf("\nPRODUTO ENCONTRADO NO ESTOQUE");
     printf("\n===========================================");
@@ -175,7 +175,7 @@ void Buscarproduto() {
     printf("\n\nCodigo do Produto nao encontrado no estoque");
     int y;
     printf("\nDeseja buscar outro produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       Buscarproduto();
@@ -187,8 +187,8 @@ void Buscarproduto() {
 void BuscarprodutoCaixa() {
   int x = 0;
   printf("\n\nDigite  o codigo do produto: ");
-  scanf("%i", & x);
-  if (VerificarProduto(x, produtosCaixa, QuantMax) && EstoqueCaixa[x - 1].CodigoDeBarra > 0) {
+  scanf("%i", &x);
+  if (VerificarProduto(x, produtosCaixa, QuantMax) &&EstoqueCaixa[x - 1].CodigoDeBarra > 0) {
     x = x - 1;
     printf("\nPRODUTO ENCONTRADO NO CAIXA");
     printf("\n===========================================");
@@ -199,7 +199,7 @@ void BuscarprodutoCaixa() {
     printf("\n\nCodigo do Produto nao encontrado no estoque de caixa");
     int y;
     printf("\nDeseja buscar outro produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       BuscarprodutoCaixa();
@@ -210,12 +210,12 @@ void BuscarprodutoCaixa() {
 void Comprar() {
   int cod = 0;
   printf("\n\nDigite  o codigo do produto que deseja comprar: ");
-  scanf("%i", & cod);
+  scanf("%i", &cod);
   if (cod - 1 > produtosCadastrados || cod <= 0) {
     printf("\n\nCodigo do Produto nao encontrado no estoque");
     int y;
     printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       Comprar();
@@ -225,11 +225,11 @@ void Comprar() {
     int x, y;
     float conta;
     printf("\nDigite a quantidade de %s que deseja comprar: ", Estoque[cod - 1].nome);
-    scanf("%i", & x);
+    scanf("%i", &x);
     if (x <= Estoque[cod - 1].quantidade) {
       conta = Estoque[cod - 1].pcompra * x;
       printf("\nDeseja comprar %s no valor de %.2f? Se sim digite 1, se nao 0: ", Estoque[cod - 1].nome, conta);
-      scanf("%i", & y);
+      scanf("%i", &y);
       if (y == 1) {
         if (Dinheiro >= conta) {
           Dinheiro = Dinheiro - conta;
@@ -248,7 +248,7 @@ void Comprar() {
           printf("\nCompra realizada com sucesso!");
           int y;
           printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
-          scanf("%i", & y);
+          scanf("%i", &y);
           if (y == 1) {
             Limpar();
             Comprar();
@@ -258,7 +258,7 @@ void Comprar() {
           printf("\n\nVoce nao tem dinheiro suficiente! ");
           int y;
           printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
-          scanf("%i", & y);
+          scanf("%i", &y);
           if (y == 1) {
             Limpar();
             Comprar();
@@ -271,7 +271,7 @@ void Comprar() {
       printf("\n\nNao Existe essa quantidade de %s no estoque! ", Estoque[cod - 1].nome);
       int y;
       printf("\nDeseja comprar mais algum produto? Se sim digite 1, se nao 0: ");
-      scanf("%i", & y);
+      scanf("%i", &y);
       if (y == 1) {
         Limpar();
         Comprar();
@@ -284,12 +284,12 @@ void Comprar() {
 void Vender() {
   int cod = 0;
   printf("\n\nDigite  o codigo do produto que deseja vender: ");
-  scanf("%i", & cod);
+  scanf("%i", &cod);
   if (VerificarProduto(cod, produtosCaixa, QuantMax) == false || cod <= 0) {
     printf("\n\nCodigo do Produto nao encontrado no caixa");
     int y;
     printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
-    scanf("%i", & y);
+    scanf("%i", &y);
     if (y == 1) {
       Limpar();
       Vender();
@@ -299,11 +299,11 @@ void Vender() {
     int x, y;
     float conta;
     printf("\nDigite a quantidade de %s que deseja vender: ", EstoqueCaixa[cod - 1].nome);
-    scanf("%i", & x);
+    scanf("%i", &x);
     if (x <= EstoqueCaixa[cod - 1].quantidade) {
       conta = EstoqueCaixa[cod - 1].pvenda * x;
       printf("\nDeseja vender %s no valor de %.2f? Se sim digite 1, se nao 0: ", EstoqueCaixa[cod - 1].nome, conta);
-      scanf("%i", & y);
+      scanf("%i", &y);
       if (y == 1) {
         Dinheiro = Dinheiro + conta;
         int Index = cod - 1;
@@ -320,7 +320,7 @@ void Vender() {
         printf("\nVenda realizada com sucesso!");
         int y;
         printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
-        scanf("%i", & y);
+        scanf("%i", &y);
         if (y == 1) {
           Limpar();
           Vender();
@@ -332,7 +332,7 @@ void Vender() {
       printf("\n\nNao Existe essa quantidade de %s no estoque de caixa! ", EstoqueCaixa[cod - 1].nome);
       int y;
       printf("\nDeseja vender mais algum produto? Se sim digite 1, se nao 0: ");
-      scanf("%i", & y);
+      scanf("%i", &y);
       if (y == 1) {
         Limpar();
         Vender();
@@ -350,7 +350,7 @@ void MenuDeEstoque() {
   printf("\nDigite 4 - Buscar um produto por código de barras");
   printf("\nDigite 5 - Controle de caixa");
   printf("\n\nEscolher: ");
-  scanf("%d", & opcao);
+  scanf("%d", &opcao);
   switch (opcao) {
   case 1:
     Limpar();
@@ -387,7 +387,7 @@ void MenuDeCaixa() {
   printf("\nDigite 4 - Buscar um produto por código de barras");
   printf("\nDigite 5 - Para menu de estoque");
   printf("\n\nEscolher: ");
-  scanf("%d", & opcao);
+  scanf("%d", &opcao);
   switch (opcao) {
   case 1:
     Limpar();
@@ -420,7 +420,7 @@ void MenuDeCaixa() {
 void Quitar(int x) {
   int y;
   printf("\nDeseja sair do programa? Se sim digite 1, se nao 0: ");
-  scanf("%i", & y);
+  scanf("%i", &y);
   if (y == 1) {
     return;
   } else {
