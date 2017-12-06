@@ -23,4 +23,5 @@
      .Conveniências;
      .Mercados; 
      .Lojas; 
-     .Todos os estabelecimentos que precisam de um controle da entrada, saida e estocagem de seus produtos; 
+     .Todos os estabelecimentos que precisam de um controle da entrada, saida e estocagem de seus produtos; 
+    ![alt text](https://i.imgur.com/seYbguy.png)
