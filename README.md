@@ -31,3 +31,5 @@ Controle de Caixa
 ![alt text](https://i.imgur.com/KVnTZ4L.png)
 Estruturas Usadas
 ![alt text](https://i.imgur.com/XQGMJi8.png)
+Registro Manual de um produto
+![alt text](https://i.imgur.com/KKQmdfU.png)
