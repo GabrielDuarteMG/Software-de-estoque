@@ -25,7 +25,7 @@
      .Lojas; 
      .Todos os estabelecimentos que precisam de um controle da entrada, saida e estocagem de seus produtos; 
    
-#Imagens do Software   
+# Imagens do Software   
 Controle de Estoque
 ![alt text](https://i.imgur.com/wG5GQvO.png)
 Controle de Caixa
