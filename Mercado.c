@@ -343,7 +343,7 @@ void Vender() {
 }
 void MenuDeEstoque() {
   int opcao;
-  printf(" \n            Supermercado Carlota\n\n\n");
+  printf(" \n            Gerenciamento de produtos\n\n\n");
   printf("\nDigite 1 - Cadastro de produtos");
   printf("\nDigite 2 - Alterar quantidade de produtos");
   printf("\nDigite 3 - Listar produtos");
