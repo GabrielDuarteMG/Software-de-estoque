@@ -30,4 +30,4 @@ Controle de Estoque
 Controle de Caixa
 ![alt text](https://i.imgur.com/KVnTZ4L.png)
 Estruturas Usadas
-![alt text](https://i.imgur.com/1ijL65b.png)
+![alt text](https://i.imgur.com/XQGMJi8.png)
