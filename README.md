@@ -24,4 +24,11 @@
      .Mercados; 
      .Lojas; 
      .Todos os estabelecimentos que precisam de um controle da entrada, saida e estocagem de seus produtos; 
-    ![alt text](https://i.imgur.com/seYbguy.png)
+   
+#Imagens do Software   
+Controle de Estoque
+![alt text](https://i.imgur.com/wG5GQvO.png)
+Controle de Caixa
+![alt text](https://i.imgur.com/KVnTZ4L.png)
+Estruturas Usadas
+![alt text](https://i.imgur.com/1ijL65b.png)
