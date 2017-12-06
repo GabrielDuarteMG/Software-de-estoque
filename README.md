@@ -22,8 +22,7 @@
     -O publico que utilizara o programa são pessoas que possuem controle de caixa e estoque em seus estabelecimentos tais como:
      .Conveniências;
      .Mercados; 
-     .Lojas; 
-     .Todos os estabelecimentos que precisam de um controle da entrada, saida e estocagem de seus produtos; 
+     .Lojas;  
    
 # Imagens do Software   
 Controle de Estoque
